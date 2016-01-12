@@ -1,0 +1,44 @@
+redis常用命令：
+1、启动服务
+	redis-server
+2、进入redis
+	redis-cli
+3、查询所有的keys
+	keys *
+4、查询特定的keys
+	keys （my*）
+5、hash类型key对应field的长度
+	HLEN mykey
+6、hash类型key对应的field
+	HKEYS mykey
+7、hash类型key对应的value
+	HVALS mykey
+
+创建用户：/root/nodebb/src/user/create.js
+用户注册的邮箱：手机号+@qq.com
+关闭注册邮箱激活
+关闭订阅消息发送邮箱
+
+对数据库的操作
+/nodebb/src/dababase/redis/
+
+iguration\org.eclipse.osgi\bundles\1056\1\.cp
+
+简单连接示例：
+import redis.clients.jedis.Jedis;
+
+
+public class Infrastructure {
+       static String constr = "192.168.100.60" ;
+       public static Jedis getRedis(){
+            Jedis jedis = new Jedis(constr) ;
+          return jedis ;
+      }
+       public static void main(String[] args){
+            Jedis j = Infrastructure. getRedis() ;
+            String output ;
+            j.set( "hello", "world" ) ;
+            output = j.get( "hello") ;
+            System. out.println(output) ;
+      }
+}

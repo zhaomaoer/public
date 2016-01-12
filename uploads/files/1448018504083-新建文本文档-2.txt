@@ -1,0 +1,13 @@
+1、修改了node_modules/nodebb-theme-persona/templates/categories.tpl 里直接将category那一段删了：<h1 class="categories-title">[[category:categories]]</h1>
+
+2、去掉首页的foot
+
+3、打开文件 NodeBB/node_modules/nodebb-theme-persona/less/style.less
+
+删掉第一行 @import url(//fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+
+4、头衔屏蔽问题
+gravatar/lib/gravatar.js中的
+baseURL = protocol ? "https://s.gravatar.com/avatar/" : 'http://www.gravatar.com/avatar/';
+改为
+baseURL = protocol ? "https://secure.gravatar.com/avatar/" : 'http://www.gravatar.com/avatar/';
